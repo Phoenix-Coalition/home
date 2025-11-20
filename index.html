@@ -87,22 +87,25 @@
     }
 
     .logo-mark {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 1.25rem;
-      background: conic-gradient(
-        from 200deg,
-        #f97316,
-        #facc15,
-        #dc2626,
-        #f97316
-      );
+      background: radial-gradient(circle at 30% 20%, rgba(248, 113, 22, 0.5), transparent 58%),
+        #0b1220;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6),
         0 18px 40px rgba(248, 113, 113, 0.45);
-      font-size: 1.1rem;
+      overflow: hidden;
+      border: 1px solid rgba(248, 113, 22, 0.35);
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1.25rem;
     }
 
     .logo-text {
@@ -178,6 +181,26 @@
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
+    }
+
+    .flag-band {
+      position: absolute;
+      inset: auto -10% 12% -10%;
+      height: 14px;
+      background: linear-gradient(
+        90deg,
+        #0b2248,
+        #0b2248 24%,
+        #ffffff 24%,
+        #ffffff 42%,
+        #b91c1c 42%,
+        #b91c1c 58%,
+        #ffffff 58%,
+        #ffffff 76%,
+        #0b2248 76%
+      );
+      opacity: 0.45;
+      filter: blur(0.2px);
     }
 
     .hero-main {
@@ -395,6 +418,30 @@
       margin: 0.3rem 0 0.3rem;
       font-size: 0.88rem;
       line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .priority-cluster {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin-top: 0.6rem;
+    }
+
+    .priority-cluster .image-frame {
+      max-width: none;
+      aspect-ratio: 1 / 1;
+      border-radius: 1rem;
+    }
+
+    .priority-card h4 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+    }
+
+    .priority-card p {
+      margin: 0;
+      font-size: 0.86rem;
       color: var(--muted);
     }
 
@@ -711,11 +758,11 @@
     <div class="nav-inner">
       <div style="display:flex;align-items:center;gap:0.65rem;">
         <div class="logo-mark" aria-hidden="true">
-          <span>🔥</span>
+          <img src="PartyLogo.png" alt="Phoenix Coalition emblem" />
         </div>
         <div class="logo-text">
           <span>The Phoenix Coalition</span>
-          <span>Rebuild. Reform. Rise.</span>
+          <span>Rebuild. Reform. Rise. 🇺🇸</span>
         </div>
       </div>
       <nav class="nav-links" aria-label="Primary">
@@ -763,6 +810,7 @@
           <span class="image-label">Alma Coin of District 13</span>
         </div>
       </div>
+      <div class="flag-band" aria-hidden="true"></div>
     </section>
 
     <!-- About / Party -->
@@ -772,35 +820,82 @@
         <h2 class="section-title">About The Phoenix Coalition</h2>
       </div>
 
-      <div class="grid-two">
-        <!-- Party identity -->
-        <article class="card">
-          <h3>Party Overview</h3>
-          <p class="placeholder-note">
-            We champion pragmatic, common-sense governance for the benefit of all our citizens. The Coalition.
-          </p>
+      <article class="card" style="grid-column:1/-1;">
+        <h3>Party Overview</h3>
+        <p class="placeholder-note">
+          We champion pragmatic, common-sense governance for the benefit of all our citizens. The Coalition rises with the
+          strength of our people, the resilience of our symbol, and the shared values of our American community.
+        </p>
 
-          <div style="margin-top:1.2rem;">
-            <div class="image-frame small">
-              <!-- Replace the image below with your party logo or symbol -->
-              <img src="PartyLogo.png" alt="Phoenix Coalition logo" />
-              <span class="image-label">Party logo / symbol</span>
-            </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:1.1rem;">
+          <div class="image-frame small">
+            <img src="PartyLogo.png" alt="Phoenix Coalition logo" />
+            <span class="image-label">Party emblem</span>
+          </div>
+          <div class="image-frame small">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" />
+            <span class="image-label">American flag</span>
+          </div>
+          <p style="flex:1;min-width:220px;font-size:0.9rem;color:var(--muted);margin:0;">
+            Our promise is to rebuild with discipline, honor our flag, and carry the Phoenix crest into every community we
+            serve.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section id="core-priorities" aria-label="Core priorities with imagery">
+      <div class="section-header">
+        <span class="pill-label">Core Focus</span>
+        <h2 class="section-title">Core Priorities</h2>
+        <p class="section-kicker">Images and messaging that keep the Phoenix symbol and American spirit front and center.</p>
+      </div>
+
+      <div class="grid-two">
+        <article class="card priority-card">
+          <h4>Security &amp; Stability</h4>
+          <p>Disciplined justice, dependable institutions, and the unifying strength of our flag.</p>
+          <div class="priority-cluster" aria-label="Security imagery placeholders">
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
+            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
           </div>
         </article>
 
-        <!-- Quick summary card -->
-        <article class="card">
-          <h3>Core Priorities</h3>
-          <p class="placeholder-note">
-            <!-- OPTIONAL SHORT SUMMARY OF KEY VALUES -->
-            You can use this area for 3–4 bullet points that summarize your core values.
-          </p>
-          <ul style="margin:0.7rem 0 0;padding-left:1.1rem;font-size:0.88rem;color:var(--muted);">
-            <li>[Priority 1 — e.g. “Restore public safety with fair, data-driven justice.”]</li>
-            <li>[Priority 2 — e.g. “Guarantee universal, disciplined healthcare access.”]</li>
-            <li>[Priority 3 — e.g. “Invest in education, jobs, and long-term stability.”]</li>
-          </ul>
+        <article class="card priority-card">
+          <h4>Opportunity &amp; Growth</h4>
+          <p>Jobs, innovation, and education guided by Phoenix discipline and national pride.</p>
+          <div class="priority-cluster" aria-label="Opportunity imagery placeholders">
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
+            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid-two" style="margin-top:1.4rem;">
+        <article class="card priority-card">
+          <h4>Community &amp; Service</h4>
+          <p>Serving neighborhoods with integrity while honoring our shared heritage.</p>
+          <div class="priority-cluster" aria-label="Community imagery placeholders">
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
+            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+          </div>
+        </article>
+
+        <article class="card priority-card">
+          <h4>Resilience &amp; Renewal</h4>
+          <p>Recovering stronger after crisis, rising like the Phoenix with steadfast patriotism.</p>
+          <div class="priority-cluster" aria-label="Resilience imagery placeholders">
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
+            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
+            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+          </div>
         </article>
       </div>
     </section>
@@ -820,7 +915,6 @@
         <aside class="platform-nav" aria-label="Issue navigation">
           <div class="platform-nav-title">Issues &amp; Planks</div>
           <ul>
-            <li><a href="#preamble">Preamble</a></li>
             <li><a href="#criminal-justice">Criminal Justice Reform</a></li>
             <li><a href="#healthcare">Healthcare &amp; Pharmaceutical Regulation</a></li>
             <li><a href="#education">Education</a></li>
@@ -836,21 +930,6 @@
 
         <!-- Right: content -->
         <div class="platform-content">
-          <!-- PREAMBLE -->
-          <article id="preamble">
-            <div class="platform-tag">
-              <span class="dot"></span>Foundational Vision
-            </div>
-            <h3>Preamble</h3>
-            <div class="plank-body">
-              <!-- PASTE PREAMBLE PLANK TEXT HERE -->
-              Welcome to The Phoenix Coalition. Our mission is to build a better future through innovative policies and governance. The Phoenix Coalition believes that lasting freedom comes not from constant upheaval, but from rebuilding with discipline, fairness, and purpose.
-After prolonged polarization, economic inequality, and loss of trust in leadership, we refuse to choose between disorder and complacency. Instead, we rise from the ashes of past failures to forge a new path forward. We will lead with strength, enforcing law with consistency, protecting the economy, and respecting every citizen's right to live freely in their personal life.
-We believe in a government that is firm yet fair, one that upholds the rule of law while ensuring justice and opportunity for all while staying out of personal choices. The role of the government is to keep order, ensure opportunity, and defend liberty; not to moralize or divide.
-We will fight corruption wherever it lives, whether in government offices or boardrooms. We will rebuild trust in our institutions, restore dignity to work, and make sure that safety and stability are rights, not privileges.
-            </div>
-          </article>
-
           <!-- CRIMINAL JUSTICE -->
           <article id="criminal-justice">
             <div class="platform-tag">
