@@ -185,29 +185,6 @@
       z-index: 1;
     }
 
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.88);
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      color: var(--muted);
-      font-size: 0.7rem;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .hero-kicker span {
-      display: inline-flex;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle, #f97316, #dc2626);
-      box-shadow: 0 0 0 4px rgba(248, 113, 22, 0.35);
-    }
-
     .hero-title {
       margin: 1rem 0 0.5rem;
       font-size: clamp(2.4rem, 3.2vw + 1.1rem, 3.25rem);
@@ -353,17 +330,6 @@
       max-width: 28rem;
     }
 
-    .pill-label {
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-
     .grid-two {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
@@ -447,12 +413,19 @@
       color: var(--muted);
       flex-shrink: 0;
       overflow: hidden;
+      position: relative;
     }
 
     .candidate-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .photo-hint {
+      margin: 0.25rem 0 0;
+      font-size: 0.75rem;
+      color: var(--muted);
     }
 
     .team-grid {
@@ -732,17 +705,13 @@
     <!-- Hero / Home -->
     <section id="home" class="hero" aria-label="Phoenix Coalition overview">
       <div class="hero-main">
-        <div class="hero-kicker">
-          <span></span>
-          A disciplined vision for the next chapter
-        </div>
         <h1 class="hero-title">
           A new start with <span>The Phoenix Coalition</span>
         </h1>
         <p class="hero-subtitle">
-          The Phoenix Coalition is a post-war movement focused on stability, justice, and real
-          opportunity. We believe in strong institutions that protect people’s lives and freedoms while
-          rebuilding what was lost.
+          The Phoenix Coalition is a post-war movement focused on stability, justice, and real opportunity.
+          We believe in strong institutions that protect people’s lives and freedoms while rebuilding what was
+          lost.
         </p>
         <div class="hero-actions">
           <a href="#platform" class="primary">
@@ -760,7 +729,7 @@
         <div class="image-frame">
           <!-- Replace the image below with your own hero photo -->
           <img src="images/hero-placeholder.jpg" alt="Candidate speaking to supporters" />
-          <span class="image-label">Hero image — replace with your campaign photo</span>
+          <span class="image-label">Replace with your campaign hero image</span>
         </div>
       </div>
     </section>
@@ -768,7 +737,6 @@
     <!-- About / Party -->
     <section id="about" aria-label="Party information">
       <div class="section-header">
-        <span class="pill-label">Our Party</span>
         <h2 class="section-title">About The Phoenix Coalition</h2>
         <p class="section-kicker">
           Use this space to introduce your party’s story — who you represent, why you formed, and what makes your approach different.
@@ -788,7 +756,7 @@
             <div class="image-frame small">
               <!-- Replace the image below with your party logo or symbol -->
               <img src="images/logo-placeholder.jpg" alt="Phoenix Coalition logo" />
-              <span class="image-label">Party logo / symbol</span>
+              <span class="image-label">Replace with your party logo</span>
             </div>
           </div>
         </article>
@@ -809,20 +777,19 @@
       </div>
     </section>
 
-    <!-- Platform planks -->
-    <section id="platform" aria-label="Party Platform Planks">
+    <!-- Platform -->
+    <section id="platform" aria-label="Party platform">
       <div class="section-header">
-        <span class="pill-label">Platform</span>
         <h2 class="section-title">Where We Stand</h2>
         <p class="section-kicker">
-          Use the sections below to paste in your full issue planks from the Political Campaign Project.
+          Outline your party’s stance across major issues and keep the content focused on the people you hope to serve.
         </p>
       </div>
 
       <div class="platform-layout">
         <!-- Left: local navigation -->
         <aside class="platform-nav" aria-label="Issue navigation">
-          <div class="platform-nav-title">Issues &amp; Planks</div>
+          <div class="platform-nav-title">Issues &amp; Priorities</div>
           <ul>
             <li><a href="#preamble">Preamble</a></li>
             <li><a href="#criminal-justice">Criminal Justice Reform</a></li>
@@ -834,7 +801,7 @@
             <li><a href="#abortion">Abortion</a></li>
             <li><a href="#economy">The Economy</a></li>
             <li><a href="#environment">The Environment</a></li>
-            <li><a href="#hunger-games">The Hunger Games</a></li>
+            <li><a href="#public-safety">Public Safety</a></li>
           </ul>
         </aside>
 
@@ -848,7 +815,7 @@
             <h3>Preamble</h3>
             <div class="plank-body">
               <!-- PASTE PREAMBLE PLANK TEXT HERE -->
-              [Paste the full text of your PREAMBLE plank from Political Campaign Project.pdf here.]
+              [Share your party’s founding statement and the principles that guide every decision.]
             </div>
           </article>
 
@@ -860,7 +827,7 @@
             <h3>Criminal Justice Reform</h3>
             <div class="plank-body">
               <!-- PASTE CRIMINAL JUSTICE PLANK TEXT HERE -->
-              [Paste the full text of your CRIMINAL JUSTICE REFORM plank here.]
+              [Explain how you will deliver fair, transparent justice while protecting public safety.]
             </div>
           </article>
 
@@ -872,7 +839,7 @@
             <h3>Healthcare and Pharmaceutical Regulation</h3>
             <div class="plank-body">
               <!-- PASTE HEALTHCARE PLANK TEXT HERE -->
-              [Paste the full text of your HEALTHCARE &amp; PHARMACEUTICAL REGULATION plank here.]
+              [Describe your plan to provide affordable care and hold bad actors accountable.]
             </div>
           </article>
 
@@ -884,7 +851,7 @@
             <h3>Education</h3>
             <div class="plank-body">
               <!-- PASTE EDUCATION PLANK TEXT HERE -->
-              [Paste the full text of your EDUCATION plank here.]
+              [Lay out how you will strengthen schools, expand opportunity, and support educators.]
             </div>
           </article>
 
@@ -896,7 +863,7 @@
             <h3>Second Amendment Rights</h3>
             <div class="plank-body">
               <!-- PASTE SECOND AMENDMENT PLANK TEXT HERE -->
-              [Paste the full text of your SECOND AMENDMENT RIGHTS plank here.]
+              [Clarify your approach to responsible gun ownership and community safety.]
             </div>
           </article>
 
@@ -908,7 +875,7 @@
             <h3>Foreign Policy</h3>
             <div class="plank-body">
               <!-- PASTE FOREIGN POLICY PLANK TEXT HERE -->
-              [Paste the full text of your FOREIGN POLICY plank here.]
+              [Explain how you will keep the nation secure and respected abroad.]
             </div>
           </article>
 
@@ -920,7 +887,7 @@
             <h3>Immigration</h3>
             <div class="plank-body">
               <!-- PASTE IMMIGRATION PLANK TEXT HERE -->
-              [Paste the full text of your IMMIGRATION plank here.]
+              [Outline your plan for humane, orderly immigration that strengthens communities.]
             </div>
           </article>
 
@@ -932,7 +899,7 @@
             <h3>Abortion</h3>
             <div class="plank-body">
               <!-- PASTE ABORTION PLANK TEXT HERE -->
-              [Paste the full text of your ABORTION plank here.]
+              [State your position on reproductive rights and access to care.]
             </div>
           </article>
 
@@ -944,7 +911,7 @@
             <h3>The Economy</h3>
             <div class="plank-body">
               <!-- PASTE ECONOMY PLANK TEXT HERE -->
-              [Paste the full text of your ECONOMY plank here.]
+              [Explain how you will create jobs, grow wages, and support small businesses.]
             </div>
           </article>
 
@@ -956,19 +923,19 @@
             <h3>The Environment</h3>
             <div class="plank-body">
               <!-- PASTE ENVIRONMENT PLANK TEXT HERE -->
-              [Paste the full text of your ENVIRONMENT plank here.]
+              [Share how you will protect air, water, and climate resilience for future generations.]
             </div>
           </article>
 
-          <!-- HUNGER GAMES -->
-          <article id="hunger-games">
+          <!-- PUBLIC SAFETY -->
+          <article id="public-safety">
             <div class="platform-tag">
-              <span class="dot"></span>The Hunger Games
+              <span class="dot"></span>Public Safety
             </div>
-            <h3>The Hunger Games</h3>
+            <h3>Public Safety</h3>
             <div class="plank-body">
-              <!-- PASTE HUNGER GAMES PLANK TEXT HERE -->
-              [Paste the full text of your HUNGER GAMES plank here.]
+              <!-- PASTE PUBLIC SAFETY PLANK TEXT HERE -->
+              [Explain how you will keep neighborhoods safe while respecting civil liberties.]
             </div>
           </article>
         </div>
@@ -978,10 +945,9 @@
     <!-- Candidates & Team -->
     <section id="candidates" aria-label="Candidates and campaign team">
       <div class="section-header">
-        <span class="pill-label">Leadership</span>
         <h2 class="section-title">Candidates &amp; Key Team</h2>
         <p class="section-kicker">
-          Introduce your ticket and core campaign roles. You can keep or edit the names below to match your project.
+          Introduce your ticket and core campaign roles. Swap in your own names, titles, and contact details.
         </p>
       </div>
 
@@ -998,10 +964,9 @@
                 </div>
                 <div>
                   <div class="candidate-role">Presidential Candidate</div>
-                  <div class="candidate-name">Alma Coin — Raine</div>
-                  <p class="placeholder-note">
-                    [Add a 2–3 sentence bio for your presidential candidate here.]
-                  </p>
+                  <div class="candidate-name">[Presidential Candidate Name]</div>
+                  <p class="placeholder-note">[Add a 2–3 sentence bio for your presidential candidate here.]</p>
+                  <p class="photo-hint">Replace the headshot above with your presidential candidate’s photo.</p>
                 </div>
               </div>
             </div>
@@ -1014,10 +979,9 @@
                 </div>
                 <div>
                   <div class="candidate-role">Vice Presidential Candidate</div>
-                  <div class="candidate-name">Haymitch — Robby</div>
-                  <p class="placeholder-note">
-                    [Add a 2–3 sentence bio for your vice presidential candidate here.]
-                  </p>
+                  <div class="candidate-name">[Vice Presidential Candidate Name]</div>
+                  <p class="placeholder-note">[Add a 2–3 sentence bio for your vice presidential candidate here.]</p>
+                  <p class="photo-hint">Replace the headshot above with your vice presidential candidate’s photo.</p>
                 </div>
               </div>
             </div>
@@ -1028,71 +992,47 @@
         <article class="card">
           <h3>Campaign Team</h3>
           <p style="font-size:0.85rem;color:var(--muted);">
-            You can keep these roles and contacts or adjust them to match your own project requirements.
+            Update these roles and contacts to match your actual leadership team.
           </p>
           <div class="team-grid">
             <div>
-              <strong>Raine</strong><br />
-              <span class="role">Fictional Issue · President</span>
+              <strong>[Name]</strong><br />
+              <span class="role">Campaign Manager</span>
             </div>
             <div>
-              <strong>Robby</strong><br />
-              <span class="role">Healthcare &amp; Drug Policy · Vice President</span>
+              <strong>[Name]</strong><br />
+              <span class="role">Communications Director</span>
             </div>
             <div>
-              <strong>Sandhya</strong><br />
-              <span class="role">Criminal Justice Reform · Webmaster</span><br />
-              <a href="mailto:ssrimathirmala@cheshire.k12.ct.us">
-                ssrimathirmala@cheshire.k12.ct.us
-              </a> · 203-715-2675
+              <strong>[Name]</strong><br />
+              <span class="role">Policy Director</span><br />
+              <a href="mailto:email@example.com">email@example.com</a> · (555) 555-1234
             </div>
             <div>
-              <strong>Rishi</strong><br />
-              <span class="role">Foreign Policy · Public Relations Manager</span>
+              <strong>[Name]</strong><br />
+              <span class="role">Field Director</span>
             </div>
             <div>
-              <strong>Josh</strong><br />
-              <span class="role">Immigration · Policy Expert</span>
+              <strong>[Name]</strong><br />
+              <span class="role">Events Lead</span>
             </div>
             <div>
-              <strong>Touraj</strong><br />
-              <span class="role">Immigration · Campaign Manager</span><br />
-              <a href="mailto:trajabipour@cheshire.k12.ct.us">
-                trajabipour@cheshire.k12.ct.us
-              </a> · 475-255-8018
+              <strong>[Name]</strong><br />
+              <span class="role">Volunteer Coordinator</span><br />
+              <a href="mailto:email@example.com">email@example.com</a> · (555) 555-5678
             </div>
             <div>
-              <strong>Naman</strong><br />
-              <span class="role">Education · Press Secretary</span><br />
-              <a href="mailto:narora@cheshire.k12.ct.us">
-                narora@cheshire.k12.ct.us
-              </a> · 203-558-7197
+              <strong>[Name]</strong><br />
+              <span class="role">Press Secretary</span><br />
+              <a href="mailto:email@example.com">email@example.com</a> · (555) 555-9012
             </div>
             <div>
-              <strong>Niam</strong><br />
-              <span class="role">Second Amendment · Media Advisor</span>
+              <strong>[Name]</strong><br />
+              <span class="role">Media Advisor</span>
             </div>
           </div>
         </article>
       </div>
-    </section>
-
-    <!-- Works Cited (content placeholder only; not in top nav) -->
-    <section id="works-cited" aria-label="Works Cited">
-      <div class="section-header">
-        <span class="pill-label">Works Cited</span>
-        <h2 class="section-title">Sources &amp; References</h2>
-        <p class="section-kicker">
-          Paste your full works cited list here so the website includes all required sources from the project.
-        </p>
-      </div>
-
-      <article class="works-card">
-        <p class="plank-body">
-          <!-- PASTE WORKS CITED TEXT / BIBLIOGRAPHY HERE -->
-          [Paste your full WORKS CITED section from Political Campaign Project.pdf here, formatted as you prefer.]
-        </p>
-      </article>
     </section>
 
     <!-- Contact / Call to action -->
@@ -1110,22 +1050,16 @@
         <div class="contact-meta">
           <p><strong>Key Contacts</strong></p>
           <p>
-            <strong>Webmaster · Criminal Justice:</strong><br />
-            Sandhya — <a href="mailto:ssrimathirmala@cheshire.k12.ct.us">
-              ssrimathirmala@cheshire.k12.ct.us
-            </a> · 203-715-2675
+            <strong>Campaign Manager:</strong><br />
+            <a href="mailto:email@example.com">email@example.com</a> · (555) 555-1234
           </p>
           <p>
-            <strong>Campaign Manager · Immigration:</strong><br />
-            Touraj — <a href="mailto:trajabipour@cheshire.k12.ct.us">
-              trajabipour@cheshire.k12.ct.us
-            </a> · 475-255-8018
+            <strong>Volunteer Coordinator:</strong><br />
+            <a href="mailto:email@example.com">email@example.com</a> · (555) 555-5678
           </p>
           <p>
-            <strong>Press Secretary · Education:</strong><br />
-            Naman — <a href="mailto:narora@cheshire.k12.ct.us">
-              narora@cheshire.k12.ct.us
-            </a> · 203-558-7197
+            <strong>Press Secretary:</strong><br />
+            <a href="mailto:email@example.com">email@example.com</a> · (555) 555-9012
           </p>
         </div>
       </div>
@@ -1137,7 +1071,6 @@
       &copy; The Phoenix Coalition. All rights reserved.
     </div>
     <div>
-      <a href="#works-cited" class="to-top">Works Cited</a> ·
       <a href="#top" class="to-top">Back to top ↑</a>
     </div>
   </footer>
