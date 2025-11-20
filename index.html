@@ -23,6 +23,7 @@
       --accent: #f97316;
       --accent-soft: rgba(249, 115, 22, 0.16);
       --accent-strong: #dc2626;
+      --accent-blue: #1d4ed8;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --border: #1f2937;
@@ -58,7 +59,7 @@
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 6rem 1.25rem 4rem;
+      padding: 7rem 1.25rem 4rem;
     }
 
     /* Header & Nav */
@@ -168,19 +169,40 @@
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(0, 1.7fr);
-      gap: 2.5rem;
-      align-items: center;
-      padding: 3.25rem 2.25rem;
-      margin-top: 1rem;
+      gap: 2rem;
+      align-items: start;
+      padding: 3.5rem 2.25rem 3rem;
+      margin-top: 1.5rem;
       border-radius: 2rem;
       background:
         radial-gradient(circle at 10% 0%, rgba(248, 113, 22, 0.25), transparent 55%),
         radial-gradient(circle at 90% 0%, rgba(239, 68, 68, 0.18), transparent 55%),
-        linear-gradient(145deg, #020617, #020617 55%, #020617);
+        linear-gradient(145deg, #0b1022, #070d1c 55%, #050a15);
       border: 1px solid rgba(55, 65, 81, 0.7);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
+    }
+
+    .hero-gallery {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(90px, 1fr));
+      gap: 0.7rem;
+      margin: -0.5rem 0 1.25rem;
+    }
+
+    .hero-gallery .image-frame {
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8));
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      aspect-ratio: 1 / 1;
+      max-width: none;
+    }
+
+    .hero-gallery .image-label {
+      font-weight: 600;
+      color: #fef2f2;
     }
 
     .flag-band {
@@ -250,6 +272,10 @@
       color: var(--muted);
       font-size: 0.95rem;
       max-width: 36rem;
+      background: rgba(2, 8, 23, 0.75);
+      padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(59, 130, 246, 0.25);
     }
 
     .hero-actions {
@@ -273,7 +299,7 @@
     }
 
     .hero-actions a.primary {
-      background: radial-gradient(circle at top left, #f97316, #dc2626);
+      background: radial-gradient(circle at top left, #f97316, #dc2626 55%, #1d4ed8);
       border-color: transparent;
       color: #fef2f2;
       font-weight: 600;
@@ -376,6 +402,14 @@
       max-width: 28rem;
     }
 
+    #platform .section-header {
+      margin-bottom: 1rem;
+    }
+
+    #platform .section-kicker {
+      margin-bottom: 0;
+    }
+
     .pill-label {
       padding: 0.2rem 0.7rem;
       border-radius: 999px;
@@ -387,17 +421,38 @@
       color: var(--muted);
     }
 
+    .flag-badge,
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 113, 22, 0.35);
+      background: rgba(15, 23, 42, 0.85);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      font-size: 0.85rem;
+      margin-left: 0.35rem;
+    }
+
+    .logo-badge img {
+      width: 16px;
+      height: 16px;
+    }
+
     .grid-two {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
       gap: 1.75rem;
+      align-items: start;
     }
 
     .card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.4), transparent 55%),
-        linear-gradient(145deg, #020617, #020617);
+      background: radial-gradient(circle at 14% 10%, rgba(30, 64, 175, 0.3), transparent 45%),
+        linear-gradient(145deg, #0b1224, #0c1429);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(55, 65, 81, 0.9);
+      border: 1px solid rgba(59, 130, 246, 0.4);
       padding: 1.5rem 1.4rem;
       box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
     }
@@ -473,6 +528,7 @@
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
       margin-top: 0.8rem;
+      align-items: start;
     }
 
     .candidate-inner {
@@ -534,7 +590,7 @@
     .platform-layout {
       display: grid;
       grid-template-columns: minmax(0, 0.95fr) minmax(0, 2fr);
-      gap: 1.75rem;
+      gap: 1.25rem;
     }
 
     .platform-nav {
@@ -548,6 +604,7 @@
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
       font-size: 0.78rem;
       color: var(--muted);
+      border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(220, 38, 38, 0.6)) 1;
     }
 
     .platform-nav-title {
@@ -556,6 +613,13 @@
       letter-spacing: 0.12em;
       color: #e5e7eb;
       margin-bottom: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .platform-nav-title::after {
+      content: "🇺🇸";
     }
 
     .platform-nav ul {
@@ -578,18 +642,24 @@
 
     .platform-nav a:hover {
       color: #f9fafb;
-      background: rgba(31, 41, 55, 0.85);
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(220, 38, 38, 0.2));
+      border: 1px solid rgba(59, 130, 246, 0.35);
     }
 
     .platform-content article {
-      margin-bottom: 1.35rem;
+      margin-bottom: 0.9rem;
+      padding: 1rem 1.1rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(248, 113, 22, 0.35);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(26, 35, 58, 0.95));
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
 
     .platform-content h3 {
-      margin: 0 0 0.3rem;
+      margin: 0 0 0.2rem;
       font-size: 1rem;
       font-weight: 600;
-      color: #f9fafb;
+      color: #fef3c7;
     }
 
     .platform-tag {
@@ -607,14 +677,19 @@
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: #f97316;
+      background: linear-gradient(135deg, #f97316, #dc2626 55%, #1d4ed8);
+      box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.15);
     }
 
     .plank-body {
       font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--muted);
+      line-height: 1.65;
+      color: #dce6f7;
       margin-top: 0.35rem;
+      background: rgba(2, 6, 23, 0.55);
+      padding: 0.75rem 0.85rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(248, 113, 22, 0.18);
       white-space: pre-wrap;
     }
 
@@ -684,6 +759,88 @@
       padding-top: 1rem;
     }
 
+    /* Involvement modal */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(2, 6, 23, 0.75);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-out;
+      z-index: 60;
+    }
+
+    .modal-backdrop.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      width: min(420px, 92vw);
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(26, 35, 58, 0.95));
+      border: 1px solid rgba(248, 113, 22, 0.35);
+      border-radius: 1.25rem;
+      padding: 1.4rem 1.35rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+      color: #e5e7eb;
+    }
+
+    .modal-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.1rem;
+    }
+
+    .modal-card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .modal-card form {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .modal-card input[type="email"] {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.85);
+      color: #f9fafb;
+      font-size: 0.9rem;
+    }
+
+    .modal-card button {
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(248, 113, 22, 0.8);
+      background: radial-gradient(circle at top left, #f97316, #dc2626 55%, #1d4ed8);
+      color: #fef2f2;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(248, 113, 22, 0.35);
+    }
+
+    .modal-card .dismiss {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--muted);
+      box-shadow: none;
+    }
+
+    .modal-card .dismiss:hover {
+      color: #f9fafb;
+      border-color: rgba(248, 113, 22, 0.5);
+    }
+
     .to-top {
       font-size: 0.75rem;
       color: #f97316;
@@ -697,6 +854,11 @@
       .hero {
         grid-template-columns: minmax(0, 1fr);
         padding: 2.6rem 1.6rem;
+      }
+
+      .hero-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        margin-bottom: 0.8rem;
       }
 
       .hero-visual {
@@ -778,6 +940,14 @@
   <main>
     <!-- Hero / Home -->
     <section id="home" class="hero" aria-label="Phoenix Coalition overview">
+      <div class="hero-gallery" aria-label="Coalition symbols">
+        <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix Coalition crest" /><span class="image-label">Party</span></div>
+        <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /><span class="image-label">Nation</span></div>
+        <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /><span class="image-label">Leader</span></div>
+        <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix Coalition crest" /><span class="image-label">Resilience</span></div>
+        <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /><span class="image-label">Unity</span></div>
+        <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /><span class="image-label">People</span></div>
+      </div>
       <div class="hero-main">
         <div class="hero-kicker">
           <span></span>
@@ -902,7 +1072,11 @@
     <section id="platform" aria-label="Party Platform Planks">
       <div class="section-header">
         <span class="pill-label">Platform</span>
-        <h2 class="section-title">Where We Stand</h2>
+        <h2 class="section-title">
+          Where We Stand
+          <span class="flag-badge" aria-hidden="true">🇺🇸</span>
+          <span class="logo-badge" aria-hidden="true"><img src="PartyLogo.png" alt="Phoenix emblem" /></span>
+        </h2>
         <p class="section-kicker">
           Use the sections below to paste in your full issue planks from the Political Campaign Project.
         </p>
@@ -1093,7 +1267,11 @@ The Coalition supports a national transition to energy that is reliable, indepen
     <section id="candidates" aria-label="Candidates and campaign team">
       <div class="section-header">
         <span class="pill-label">Leadership</span>
-        <h2 class="section-title">Candidates &amp; Key Team</h2>
+        <h2 class="section-title">
+          Candidates &amp; Key Team
+          <span class="flag-badge" aria-hidden="true">🇺🇸</span>
+          <span class="logo-badge" aria-hidden="true"><img src="PartyLogo.png" alt="Phoenix emblem" /></span>
+        </h2>
         <p class="section-kicker">
           Our Candidates.
         </p>
@@ -1312,5 +1490,35 @@ World Bank. Country Climate and Development Report: United States of America. Wo
       <a href="#top" class="to-top">Back to top ↑</a>
     </div>
   </footer>
+
+  <div class="modal-backdrop" id="engage-modal" role="dialog" aria-modal="true" aria-labelledby="engage-title">
+    <div class="modal-card">
+      <h3 id="engage-title">Stand with the Phoenix Coalition</h3>
+      <p>Share your email to get involved and receive campaign updates.</p>
+      <form>
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" />
+        <button type="button">Count me in</button>
+        <button type="button" class="dismiss" id="dismiss-modal">Maybe later</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("engage-modal");
+      const dismiss = document.getElementById("dismiss-modal");
+      if (modal) {
+        setTimeout(() => modal.classList.add("is-active"), 300);
+      }
+
+      const closeModal = () => modal?.classList.remove("is-active");
+      dismiss?.addEventListener("click", closeModal);
+      modal?.addEventListener("click", (evt) => {
+        if (evt.target === modal) {
+          closeModal();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
