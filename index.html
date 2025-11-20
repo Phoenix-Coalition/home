@@ -68,23 +68,23 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(22px);
       background: linear-gradient(
         to bottom,
         rgba(15, 23, 42, 0.98),
-        rgba(15, 23, 42, 0.92),
+        rgba(15, 23, 42, 0.94),
         transparent
       );
-      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.88);
     }
 
     .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0.75rem 1.25rem;
+      padding: 1.1rem 1.4rem;
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1.35rem;
     }
 
     .logo-mark {
@@ -116,33 +116,35 @@
     }
 
     .logo-text span:first-child {
-      font-weight: 650;
-      letter-spacing: 0.03em;
+      font-weight: 750;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      font-size: 0.78rem;
+      font-size: 0.94rem;
       color: #fef2f2;
     }
 
     .logo-text span:last-child {
-      font-size: 0.72rem;
-      color: var(--muted);
+      font-size: 0.82rem;
+      color: #cbd5e1;
     }
 
     .nav-links {
       margin-left: auto;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.25rem;
+      gap: 0.35rem;
       align-items: center;
     }
 
     .nav-links a {
-      font-size: 0.8rem;
-      padding: 0.4rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 650;
+      padding: 0.55rem 1rem;
       border-radius: 999px;
-      color: var(--muted);
-      border: 1px solid transparent;
+      color: #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.3);
       transition: all 0.16s ease-out;
+      letter-spacing: 0.01em;
     }
 
     .nav-links a:hover {
@@ -154,9 +156,9 @@
     .nav-cta {
       background: radial-gradient(circle at top left, #f97316, #dc2626);
       color: #fef2f2 !important;
-      font-weight: 600;
+      font-weight: 750;
       border-color: transparent !important;
-      box-shadow: 0 12px 32px rgba(248, 113, 22, 0.45);
+      box-shadow: 0 14px 34px rgba(248, 113, 22, 0.45);
     }
 
     .nav-cta:hover {
@@ -166,12 +168,57 @@
 
     /* Hero */
 
-    .hero {
+    .gallery-strip {
+      width: 100%;
+      padding: 1.4rem 1rem 1.8rem;
+      background: radial-gradient(circle at 12% 0%, rgba(29, 78, 216, 0.28), transparent 50%),
+        radial-gradient(circle at 88% 0%, rgba(248, 113, 22, 0.2), transparent 50%),
+        linear-gradient(120deg, #050816, #0a1020 55%, #030611);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.75);
+    }
+
+    .gallery-wide {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.7fr);
-      gap: 2rem;
-      align-items: start;
-      padding: 3.5rem 2.25rem 3rem;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.9rem;
+      max-width: calc(var(--max-width) + 4rem);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .gallery-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: linear-gradient(150deg, rgba(15, 23, 42, 0.9), rgba(7, 12, 23, 0.85));
+      height: 140px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .gallery-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .gallery-tile .image-label {
+      position: absolute;
+      inset: auto 0.7rem 0.7rem;
+      background: rgba(2, 6, 23, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 0.85rem;
+      padding: 0.28rem 0.8rem;
+      font-weight: 700;
+      color: #f8fafc;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero {
+      padding: 3.5rem 2.4rem 3.1rem;
       margin-top: 1.5rem;
       border-radius: 2rem;
       background:
@@ -184,25 +231,12 @@
       overflow: hidden;
     }
 
-    .hero-gallery {
-      grid-column: 1 / -1;
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(6, minmax(90px, 1fr));
-      gap: 0.7rem;
-      margin: -0.5rem 0 1.25rem;
-    }
-
-    .hero-gallery .image-frame {
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8));
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-      aspect-ratio: 1 / 1;
-      max-width: none;
-    }
-
-    .hero-gallery .image-label {
-      font-weight: 600;
-      color: #fef2f2;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-areas: "main visual";
+      gap: 1.6rem;
+      align-items: center;
     }
 
     .flag-band {
@@ -226,8 +260,14 @@
     }
 
     .hero-main {
+      grid-area: main;
       position: relative;
       z-index: 1;
+      background: rgba(2, 8, 23, 0.78);
+      border: 1px solid rgba(248, 113, 22, 0.3);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
     }
 
     .hero-kicker {
@@ -255,7 +295,7 @@
 
     .hero-title {
       margin: 1rem 0 0.5rem;
-      font-size: clamp(2.4rem, 3.2vw + 1.1rem, 3.25rem);
+      font-size: clamp(2.4rem, 3vw + 1.1rem, 3.35rem);
       line-height: 1.05;
       letter-spacing: 0.02em;
     }
@@ -268,7 +308,7 @@
     }
 
     .hero-subtitle {
-      margin: 0.25rem 0 1.75rem;
+      margin: 0.4rem 0 1.4rem;
       color: var(--muted);
       font-size: 0.95rem;
       max-width: 36rem;
@@ -281,8 +321,8 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-bottom: 0;
+      gap: 0.65rem;
+      margin-bottom: 0.1rem;
     }
 
     .hero-actions a {
@@ -302,7 +342,7 @@
       background: radial-gradient(circle at top left, #f97316, #dc2626 55%, #1d4ed8);
       border-color: transparent;
       color: #fef2f2;
-      font-weight: 600;
+      font-weight: 700;
       box-shadow: 0 14px 35px rgba(248, 113, 22, 0.5);
     }
 
@@ -321,6 +361,7 @@
     }
 
     .hero-visual {
+      grid-area: visual;
       position: relative;
       z-index: 1;
       height: 100%;
@@ -328,6 +369,52 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0.4rem;
+    }
+
+    .hero-signup {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-signup input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: #f9fafb;
+      font-size: 0.94rem;
+    }
+
+    .hero-signup button {
+      padding: 0.78rem 1.2rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(248, 113, 22, 0.8);
+      background: radial-gradient(circle at top left, #f97316, #dc2626 55%, #1d4ed8);
+      color: #fef2f2;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(248, 113, 22, 0.35);
+    }
+
+    .hero-thankyou {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 0.9rem;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #bbf7d0;
+      font-weight: 600;
+      display: none;
+    }
+
+    .hero-thankyou.is-visible {
+      display: block;
     }
 
     /* Generic image frame for placeholders */
@@ -476,30 +563,6 @@
       color: var(--muted);
     }
 
-    .priority-cluster {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem;
-      margin-top: 0.6rem;
-    }
-
-    .priority-cluster .image-frame {
-      max-width: none;
-      aspect-ratio: 1 / 1;
-      border-radius: 1rem;
-    }
-
-    .priority-card h4 {
-      margin: 0 0 0.4rem;
-      font-size: 1rem;
-    }
-
-    .priority-card p {
-      margin: 0;
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
     .meta-row {
       display: flex;
       flex-wrap: wrap;
@@ -535,6 +598,42 @@
       display: flex;
       gap: 0.85rem;
       align-items: flex-start;
+    }
+
+    .ticket-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .candidate-block {
+      display: flex;
+      gap: 0.85rem;
+      align-items: center;
+      padding: 0.95rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(2, 6, 23, 0.7);
+    }
+
+    .team-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .team-feature {
+      min-height: 100%;
+    }
+
+    .team-feature .candidate-inner {
+      align-items: center;
+    }
+
+    .team-feature .candidate-photo {
+      width: 78px;
+      height: 78px;
+      border-radius: 1rem;
     }
 
     .candidate-photo {
@@ -851,14 +950,24 @@
     /* Responsive */
 
     @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 2.6rem 1.6rem;
+      .gallery-wide {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       }
 
-      .hero-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        margin-bottom: 0.8rem;
+      .hero {
+        padding: 2.8rem 1.6rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "main"
+          "visual";
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        margin-bottom: 0.2rem;
       }
 
       .hero-visual {
@@ -867,6 +976,10 @@
 
       .grid-two {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      .team-layout {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       }
 
       .contact-card {
@@ -938,46 +1051,74 @@
   </header>
 
   <main>
+    <section class="gallery-strip" aria-label="Coalition imagery highlights">
+      <div class="gallery-wide">
+        <div class="gallery-tile">
+          <img src="PartyLogo.png" alt="Phoenix Coalition crest" />
+          <span class="image-label">Party</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" />
+          <span class="image-label">Nation</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="RaineHeadshot.webp" alt="Candidate portrait" />
+          <span class="image-label">Leader</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="PartyLogo.png" alt="Phoenix Coalition crest" />
+          <span class="image-label">Resilience</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" />
+          <span class="image-label">Unity</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="RaineHeadshot.webp" alt="Candidate portrait" />
+          <span class="image-label">People</span>
+        </div>
+      </div>
+    </section>
+
     <!-- Hero / Home -->
     <section id="home" class="hero" aria-label="Phoenix Coalition overview">
-      <div class="hero-gallery" aria-label="Coalition symbols">
-        <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix Coalition crest" /><span class="image-label">Party</span></div>
-        <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /><span class="image-label">Nation</span></div>
-        <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /><span class="image-label">Leader</span></div>
-        <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix Coalition crest" /><span class="image-label">Resilience</span></div>
-        <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /><span class="image-label">Unity</span></div>
-        <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /><span class="image-label">People</span></div>
-      </div>
-      <div class="hero-main">
-        <div class="hero-kicker">
-          <span></span>
-          A disciplined vision for the next chapter
-        </div>
-        <h1 class="hero-title">
-          A new start with <span>The Phoenix Coalition</span>
-        </h1>
-        <p class="hero-subtitle">
-          We champion pragmatic, common-sense governance. The Phoenix Coalition is focused on stability, justice, and real
-          opportunity. We believe in strong institutions that protect people’s lives and freedoms while
-          rebuilding what was lost.
-        </p>
-        <div class="hero-actions">
-          <a href="#platform" class="primary">
-            <span class="icon">📜</span>
-            View our platform
-          </a>
-          <a href="#candidates" class="secondary">
-            <span class="icon">👥</span>
-            Meet the ticket
-          </a>
-        </div>
-      </div>
+      <div class="hero-grid">
+        <article class="hero-main">
+          <div class="hero-kicker">
+            <span></span>
+            A disciplined vision for the next chapter
+          </div>
+          <h1 class="hero-title">
+            A new start with <span>The Phoenix Coalition</span>
+          </h1>
+          <p class="hero-subtitle">
+            We champion pragmatic, common-sense governance. The Phoenix Coalition is focused on stability, justice, and real
+            opportunity. We believe in strong institutions that protect people’s lives and freedoms while
+            rebuilding what was lost.
+          </p>
+          <div class="hero-actions">
+            <a href="#platform" class="primary">
+              <span class="icon">📜</span>
+              View our platform
+            </a>
+            <a href="#candidates" class="secondary">
+              <span class="icon">👥</span>
+              Meet the ticket
+            </a>
+          </div>
+          <div class="hero-signup" id="hero-signup">
+            <input type="email" name="hero-email" id="hero-email" placeholder="you@example.com" aria-label="Email address" />
+            <button type="button" id="hero-get-involved">GET INVOLVED</button>
+          </div>
+          <div class="hero-thankyou" id="hero-thankyou">Thank you for getting involved—we'll be in touch soon.</div>
+        </article>
 
-      <div class="hero-visual" aria-label="Hero image">
-        <div class="image-frame">
-          <!-- Replace the image below with your own hero photo -->
-          <img src="RaineHeadshot.webp" alt="Candidate speaking to supporters" />
-          <span class="image-label">Alma Coin of District 13</span>
+        <div class="hero-visual" aria-label="Hero image">
+          <div class="image-frame">
+            <!-- Replace the image below with your own hero photo -->
+            <img src="RaineHeadshot.webp" alt="Candidate speaking to supporters" />
+            <span class="image-label">Alma Coin of District 13</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1012,57 +1153,101 @@
       </article>
     </section>
 
-    <section id="core-priorities" aria-label="Core priorities with imagery">
+    <!-- Candidates & Team -->
+    <section id="candidates" aria-label="Candidates and campaign team">
       <div class="section-header">
-        <span class="pill-label">Core Focus</span>
-        <h2 class="section-title">Core Priorities</h2>
-        <p class="section-kicker">Images and messaging that keep the Phoenix symbol and American spirit front and center.</p>
+        <span class="pill-label">Leadership</span>
+        <h2 class="section-title">
+          Candidates &amp; Key Team
+          <span class="flag-badge" aria-hidden="true">🇺🇸</span>
+          <span class="logo-badge" aria-hidden="true"><img src="PartyLogo.png" alt="Phoenix emblem" /></span>
+        </h2>
+        <p class="section-kicker">
+          Our Candidates.
+        </p>
       </div>
 
-      <div class="grid-two">
-        <article class="card priority-card">
-          <h4>Security &amp; Stability</h4>
-          <p>Disciplined justice, dependable institutions, and the unifying strength of our flag.</p>
-          <div class="priority-cluster" aria-label="Security imagery placeholders">
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
-            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
-            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+      <div class="team-layout">
+        <!-- Ticket -->
+        <article class="card team-feature">
+          <h3>Presidential &amp; Vice Presidential Ticket</h3>
+          <div class="ticket-stack">
+            <div class="candidate-block">
+              <div class="candidate-photo">
+                <img src="RaineHeadshot.webp" alt="Presidential candidate headshot" />
+              </div>
+              <div>
+                <div class="candidate-role">Presidential Candidate</div>
+                <div class="candidate-name">Alma Coin — Raine</div>
+                <p class="placeholder-note">
+                  [Add a 2–3 sentence bio for your presidential candidate here.]
+                </p>
+              </div>
+            </div>
+
+            <div class="candidate-block">
+              <div class="candidate-photo">
+                <img src="images/vice-president-placeholder.jpg" alt="Vice presidential candidate headshot" />
+              </div>
+              <div>
+                <div class="candidate-role">Vice Presidential Candidate</div>
+                <div class="candidate-name">Haymitch — Robby</div>
+                <p class="placeholder-note">
+                  [Add a 2–3 sentence bio for your vice presidential candidate here.]
+                </p>
+              </div>
+            </div>
           </div>
         </article>
 
-        <article class="card priority-card">
-          <h4>Opportunity &amp; Growth</h4>
-          <p>Jobs, innovation, and education guided by Phoenix discipline and national pride.</p>
-          <div class="priority-cluster" aria-label="Opportunity imagery placeholders">
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
-            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
-            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
-          </div>
-        </article>
-      </div>
-
-      <div class="grid-two" style="margin-top:1.4rem;">
-        <article class="card priority-card">
-          <h4>Community &amp; Service</h4>
-          <p>Serving neighborhoods with integrity while honoring our shared heritage.</p>
-          <div class="priority-cluster" aria-label="Community imagery placeholders">
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
-            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
-            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
-          </div>
-        </article>
-
-        <article class="card priority-card">
-          <h4>Resilience &amp; Renewal</h4>
-          <p>Recovering stronger after crisis, rising like the Phoenix with steadfast patriotism.</p>
-          <div class="priority-cluster" aria-label="Resilience imagery placeholders">
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
-            <div class="image-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="American flag" /></div>
-            <div class="image-frame"><img src="RaineHeadshot.webp" alt="Candidate portrait" /></div>
-            <div class="image-frame"><img src="PartyLogo.png" alt="Phoenix crest" /></div>
+        <!-- Team roles -->
+        <article class="card team-roster">
+          <h3>Campaign Team</h3>
+          <p style="font-size:0.85rem;color:var(--muted);">
+            You can keep these roles and contacts or adjust them to match your own project requirements.
+          </p>
+          <div class="team-grid">
+            <div>
+              <strong>Raine</strong><br />
+              <span class="role">Fictional Issue · President</span>
+            </div>
+            <div>
+              <strong>Robby</strong><br />
+              <span class="role">Healthcare &amp; Drug Policy · Vice President</span>
+            </div>
+            <div>
+              <strong>Sandhya</strong><br />
+              <span class="role">Criminal Justice Reform · Webmaster</span><br />
+              <a href="mailto:ssrimathirmala@cheshire.k12.ct.us">
+                ssrimathirmala@cheshire.k12.ct.us
+              </a> · 203-715-2675
+            </div>
+            <div>
+              <strong>Rishi</strong><br />
+              <span class="role">Foreign Policy · Public Relations Manager</span>
+            </div>
+            <div>
+              <strong>Josh</strong><br />
+              <span class="role">Immigration · Policy Expert</span>
+            </div>
+            <div>
+              <strong>Touraj</strong><br />
+              <span class="role">Immigration · Campaign Manager</span><br />
+              <a href="mailto:trajabipour@cheshire.k12.ct.us">
+                trajabipour@cheshire.k12.ct.us
+              </a> · 475-255-8018
+            </div>
+            <div>
+              <strong>Naman</strong><br />
+              <span class="role">Education · Press Secretary</span><br />
+              <a href="mailto:narora@cheshire.k12.ct.us">
+                narora@cheshire.k12.ct.us
+              </a> · 203-558-7197
+            </div>
+            <div>
+              <strong>Niam</strong><br />
+              <span class="role">Second Amendment · Media Advisor</span>
+            </div>
           </div>
         </article>
       </div>
@@ -1240,112 +1425,6 @@ The Coalition supports a national transition to energy that is reliable, indepen
       </div>
     </section>
 
-    <!-- Candidates & Team -->
-    <section id="candidates" aria-label="Candidates and campaign team">
-      <div class="section-header">
-        <span class="pill-label">Leadership</span>
-        <h2 class="section-title">
-          Candidates &amp; Key Team
-          <span class="flag-badge" aria-hidden="true">🇺🇸</span>
-          <span class="logo-badge" aria-hidden="true"><img src="PartyLogo.png" alt="Phoenix emblem" /></span>
-        </h2>
-        <p class="section-kicker">
-          Our Candidates.
-        </p>
-      </div>
-
-      <div class="grid-two">
-        <!-- Ticket -->
-        <article class="card">
-          <h3>Presidential Ticket</h3>
-          <div class="candidate-grid">
-            <div class="card-soft">
-              <div class="candidate-inner">
-                <div class="candidate-photo">
-                  <!-- Replace this img with a headshot of your presidential candidate -->
-                  <img src="RaineHeadshot.webp" alt="Presidential candidate headshot" />
-                </div>
-                <div>
-                  <div class="candidate-role">Presidential Candidate</div>
-                  <div class="candidate-name">Alma Coin — Raine</div>
-                  <p class="placeholder-note">
-                    [Add a 2–3 sentence bio for your presidential candidate here.]
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-soft">
-              <div class="candidate-inner">
-                <div class="candidate-photo">
-                  <!-- Replace this img with a headshot of your vice presidential candidate -->
-                  <img src="images/vice-president-placeholder.jpg" alt="Vice presidential candidate headshot" />
-                </div>
-                <div>
-                  <div class="candidate-role">Vice Presidential Candidate</div>
-                  <div class="candidate-name">Haymitch — Robby</div>
-                  <p class="placeholder-note">
-                    [Add a 2–3 sentence bio for your vice presidential candidate here.]
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Team roles -->
-        <article class="card">
-          <h3>Campaign Team</h3>
-          <p style="font-size:0.85rem;color:var(--muted);">
-            You can keep these roles and contacts or adjust them to match your own project requirements.
-          </p>
-          <div class="team-grid">
-            <div>
-              <strong>Raine</strong><br />
-              <span class="role">Fictional Issue · President</span>
-            </div>
-            <div>
-              <strong>Robby</strong><br />
-              <span class="role">Healthcare &amp; Drug Policy · Vice President</span>
-            </div>
-            <div>
-              <strong>Sandhya</strong><br />
-              <span class="role">Criminal Justice Reform · Webmaster</span><br />
-              <a href="mailto:ssrimathirmala@cheshire.k12.ct.us">
-                ssrimathirmala@cheshire.k12.ct.us
-              </a> · 203-715-2675
-            </div>
-            <div>
-              <strong>Rishi</strong><br />
-              <span class="role">Foreign Policy · Public Relations Manager</span>
-            </div>
-            <div>
-              <strong>Josh</strong><br />
-              <span class="role">Immigration · Policy Expert</span>
-            </div>
-            <div>
-              <strong>Touraj</strong><br />
-              <span class="role">Immigration · Campaign Manager</span><br />
-              <a href="mailto:trajabipour@cheshire.k12.ct.us">
-                trajabipour@cheshire.k12.ct.us
-              </a> · 475-255-8018
-            </div>
-            <div>
-              <strong>Naman</strong><br />
-              <span class="role">Education · Press Secretary</span><br />
-              <a href="mailto:narora@cheshire.k12.ct.us">
-                narora@cheshire.k12.ct.us
-              </a> · 203-558-7197
-            </div>
-            <div>
-              <strong>Niam</strong><br />
-              <span class="role">Second Amendment · Media Advisor</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <!-- Works Cited (content placeholder only; not in top nav) -->
     <section id="works-cited" aria-label="Works Cited">
       <div class="section-header">
@@ -1472,7 +1551,7 @@ World Bank. Country Climate and Development Report: United States of America. Wo
       <p>Share your email to get involved and receive campaign updates.</p>
       <form>
         <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" />
-        <button type="button">Count me in</button>
+        <button type="button" id="confirm-modal">Count me in</button>
         <button type="button" class="dismiss" id="dismiss-modal">Maybe later</button>
       </form>
     </div>
@@ -1482,16 +1561,31 @@ World Bank. Country Climate and Development Report: United States of America. Wo
     window.addEventListener("DOMContentLoaded", () => {
       const modal = document.getElementById("engage-modal");
       const dismiss = document.getElementById("dismiss-modal");
+      const confirmModal = document.getElementById("confirm-modal");
+      const heroForm = document.getElementById("hero-signup");
+      const heroThanks = document.getElementById("hero-thankyou");
+      const heroButton = document.getElementById("hero-get-involved");
       if (modal) {
         setTimeout(() => modal.classList.add("is-active"), 300);
       }
 
       const closeModal = () => modal?.classList.remove("is-active");
       dismiss?.addEventListener("click", closeModal);
+      confirmModal?.addEventListener("click", () => {
+        closeModal();
+        modal?.querySelector("form")?.reset();
+      });
       modal?.addEventListener("click", (evt) => {
         if (evt.target === modal) {
           closeModal();
         }
+      });
+
+      heroButton?.addEventListener("click", () => {
+        if (heroForm) {
+          heroForm.style.display = "none";
+        }
+        heroThanks?.classList.add("is-visible");
       });
     });
   </script>
